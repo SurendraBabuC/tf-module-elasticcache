@@ -46,7 +46,7 @@ resource "aws_elasticache_replication_group" "main" {
   automatic_failover_enabled = true
   num_node_groups         = var.num_node_groups
   replicas_per_node_group = var.replicas_per_node_group
-  subnet_group_name = [ aws_elasticache_subnet_group.main.name ]
+  subnet_group_name =  aws_elasticache_subnet_group.main.name
   security_group_ids = [ aws_security_group.main.id ]
   engine = "redis"
   engine_version = var.engine_version
